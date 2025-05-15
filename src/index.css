@@ -14,28 +14,19 @@
   background-color: #242424;
 }
 
-/* Estilos para a logo */
+/* Estilo da Logo */
 .logo-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px; /* Espaçamento abaixo da logo */
+  margin-bottom: 20px; /* Espaço abaixo da logo */
 }
 
 .logo {
-  width: 120px; /* Tamanho da logo */
-  height: auto;
+  width: 120px;
+  height: auto; /* Ajuste a proporção da imagem */
 }
 
-a {
-  font-weight: 500;
-  color: #000000;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #000000;
-}
-
+/* Estilos do corpo */
 body {
   margin: 0;
   padding: 0;
@@ -46,6 +37,7 @@ body {
   min-height: 100vh;
   background-color: #fcba04;
   font-family: Arial, sans-serif;
+  color: #000;
 }
 
 h1 {
@@ -55,21 +47,22 @@ h1 {
   text-align: center;
 }
 
+/* Botões */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
   background-color: #1a1a1a;
   color: white;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  border-color: #646cff;
+  background-color: #4caf50;
+  border-color: #4caf50;
 }
 
 button:focus,
@@ -85,32 +78,22 @@ button:focus-visible {
   }
 
   a:hover {
-    color: #000000;
+    color: #000;
   }
 
   button {
     background-color: #f9f9f9;
+    border-color: #ccc;
   }
 }
 
-/* Definindo o estilo da logo */
-.logo-container {
-  display: flex;
-  justify-content: center; /* Centraliza a logo */
-  margin-bottom: 20px; /* Espaço abaixo da logo */
-}
-
-.logo {
-  width: 120px; /* Ajuste o tamanho da sua logo aqui */
-  height: auto; /* Mantém a proporção da imagem */
-}
-
+/* Home */
 .home {
   text-align: center;
   margin-top: 20px;
-  color: #000000;
 }
 
+/* Botões na Home */
 button {
   padding: 10px 20px;
   margin: 10px;
@@ -124,6 +107,51 @@ button:hover {
   background-color: #45a049;
 }
 
+/* Estilos do Dashboard */
+.dashboard {
+  padding: 20px;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+h2 {
+  color: #333;
+}
+
+/* Mapa (estilo reservado para quando a API de Mapas for integrada) */
+.map-container {
+  margin-bottom: 20px;
+}
+
+.map {
+  height: 300px;
+  background-color: #e1e1e1; /* Cor cinza enquanto o mapa não estiver carregado */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.pontos {
+  margin-top: 30px;
+}
+
+.pontos ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pontos li {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes Responsivos */
 @media (max-width: 768px) {
   body {
     flex-direction: column;
@@ -138,5 +166,21 @@ button:hover {
     width: 100%;
     padding: 12px 20px;
     font-size: 1.2em;
+  }
+
+  /* Estilos do Dashboard em dispositivos móveis */
+  .dashboard {
+    margin: 10px;
+  }
+
+  .pontos li {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
