@@ -29,14 +29,6 @@ const Home = () => {
           <button>Fazer Login</button>
         </Link>
       </div>
-
-      {/* Botão para ir diretamente ao Dashboard */}
-      <div>
-        <p>Ir diretamente para o Dashboard da Empresa</p>
-        <Link to="/dashboard">
-          <button>Ir para Dashboard</button>
-        </Link>
-      </div>
     </div>
   );
 };
