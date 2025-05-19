@@ -7,6 +7,8 @@ import EmpresaForm from "./pages/EmpresaForm";
 import LoginEmpresa from './pages/LoginEmpresa'; // Tela de Login da Empresa
 import LoginVendedor from './pages/LoginVendedor'; // Tela de Login do Vendedor
 import EmpresaDashboard from "./pages/EmpresaDashboard";
+import BatedorHome from "./pages/BatedorHome";
+import EmpresaHome from "./pages/EmpresaHome";
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
         <Route path="/login-vendedor" element={<LoginVendedor />} /> {/* Login do Vendedor */}
         <Route path="/cadastro-vendedor" element={<VendedorForm />} />
         <Route path="/cadastro-empresa" element={<EmpresaForm />} />
+        <Route path="/batedor/home" element={<BatedorHome />} />
+        <Route path="/empresa/home" element={<EmpresaHome />} />
         <Route path="/dashboard" element={<EmpresaDashboard />} />{" "}
         {/* Rota do Dashboard da Empresa */}
       </Routes>

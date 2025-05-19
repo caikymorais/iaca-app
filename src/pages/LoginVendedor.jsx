@@ -16,7 +16,7 @@ const LoginVendedor = () => {
     if (email === "vendedor@teste.com" && senha === "senha123") {
       // Login bem-sucedido, redirecionando para a página de pontos de coleta
       alert("Login do Vendedor bem-sucedido!");
-      navigate("/coletas"); // Redireciona para a página de pontos de coleta
+      navigate("/batedor/home"); // Redireciona para a página de pontos de coleta
     } else {
       // Se as credenciais estiverem erradas
       setError("E-mail ou senha inválidos!");
