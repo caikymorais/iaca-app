@@ -18,12 +18,15 @@
 .logo-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px; /* Espaço abaixo da logo */
+  margin-bottom: 0px; /* Espaço abaixo da logo */
+  margin-top: -10px;
 }
 
 .logo {
-  width: 120px;
-  height: auto; /* Ajuste a proporção da imagem */
+  width: 250px; /* largura fixa menor para mobile */
+  height: auto; /* mantém a proporção */
+  display: block;
+  margin-top: -10px;
 }
 
 /* Estilos do corpo */
@@ -41,8 +44,10 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  margin-top: 0px;
+  font-size: 1em;
+  line-height: 1.3;
+  font-weight: 600;
   color: inherit;
   text-align: center;
 }
@@ -50,6 +55,7 @@ h1 {
 /* Botões */
 button {
   border-radius: 8px;
+  width: 120px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
@@ -98,7 +104,7 @@ button {
   padding: 10px 20px;
   margin: 10px;
   border: none;
-  background-color: #4caf50;
+  background-color: #5f1a37;
   color: white;
   cursor: pointer;
 }
@@ -159,11 +165,15 @@ h2 {
   }
 
   h1 {
-    font-size: 2.5em;
+    font-size: 1.8em;
+    line-height: 1.3;
+    font-weight: 600;
+    color: inherit;
+    text-align: center;
   }
 
   button {
-    width: 100%;
+    width: 50%;
     padding: 12px 20px;
     font-size: 1.2em;
   }
