@@ -1,6 +1,7 @@
 // src/pages/LoginVendedor.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/logo-iaca.svg";
 
 const LoginVendedor = () => {
   const [email, setEmail] = useState("");
@@ -24,7 +25,11 @@ const LoginVendedor = () => {
   };
 
   return (
+    
     <div className="form-container">
+      <div className="logo-container">
+         <img src={logo} alt="Logo do iaca-app" className="logo" />
+        </div>
       <h2>Login - Vendedor de Açaí</h2>
       <form onSubmit={handleSubmit}>
         <input

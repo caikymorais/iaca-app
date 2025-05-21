@@ -1,6 +1,7 @@
 // src/pages/LoginEmpresa.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/logo-iaca.svg";
 
 const LoginEmpresa = () => {
   const [email, setEmail] = useState("");
@@ -16,7 +17,7 @@ const LoginEmpresa = () => {
     if (email === "empresa@teste.com" && senha === "senha123") {
       // Login bem-sucedido, redirecionando para o dashboard
       alert("Login da Empresa bem-sucedido!");
-      navigate("/dashboard"); // Redireciona para o Dashboard da Empresa
+      navigate("/Empresa/Home"); // Redireciona para o Dashboard da Empresa
     } else {
       // Se as credenciais estiverem erradas
       setError("E-mail ou senha inválidos!");
@@ -24,7 +25,11 @@ const LoginEmpresa = () => {
   };
 
   return (
+    
     <div className="form-container">
+      <div className="logo-container">
+         <img src={logo} alt="Logo do iaca-app" className="logo" />
+       </div>
       <h2>Login - Empresa Reutilizadora</h2>
       <form onSubmit={handleSubmit}>
         <input
