@@ -1,36 +1,36 @@
 /* src/index.css */
 
-/* Definições Globais */
+/* Reset e estilo base */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #fcba04; /* Cor de fundo amarela */
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #fcba04;
 }
 
-/* Estilos do corpo */
 body {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: #fcba04; /* Fundo amarelo */
+  background-color: #fcba04;
   font-family: Arial, sans-serif;
   color: #000;
-  flex-direction: column; /* Para que tudo fique alinhado verticalmente */
-  text-align: center;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* Estilo da Logo */
+h1, h2, h3 {
+  color: #5f1a37;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 .logo-container {
   display: flex;
   justify-content: center;
@@ -38,174 +38,14 @@ body {
 }
 
 .logo {
-  width: 200px; /* Ajuste o tamanho da logo */
+  width: 200px;
   height: auto;
   display: block;
 }
 
-/* Título da tela */
-h1 {
-  margin-top: 10px;
-  font-size: 1.8em;
-  font-weight: bold;
-  color: #5f1a37; /* Cor roxa */
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Estilo dos campos de input (email, senha) */
-input[type="email"],
-input[type="password"] {
-  width: 80%;
-  padding: 12px;
-  margin: 10px 0; /* Espaço entre os campos */
-  border: 2px solid #dcdcdc;
-  border-radius: 8px;
-  font-size: 14px;
-  color: #333;
-  background-color: #fff;
-}
-
-/* Foco nos campos de input */
-input[type="email"]:focus,
-input[type="password"]:focus {
-  border-color: #8b2f45; /* Cor de borda ao focar no campo */
-  outline: none;
-}
-
-/* Botões de Ação */
-button {
-  width: 80%; /* Largura ajustada */
-  padding: 12px;
-  margin: 15px 0; /* Espaçamento entre os botões */
-  background-color: #5f1a37; /* Cor roxa dos botões */
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #4e1f5c; /* Cor escura ao passar o mouse */
-}
-
-/* Estilo do link "Cadastrar-se" */
-.register-link {
-  font-size: 14px;
-  color: #5f1a37;
-  text-decoration: none;
-  margin-top: 10px;
-}
-
-.register-link:hover {
-  text-decoration: underline;
-}
-
-/* Estilos Responsivos (para dispositivos móveis) */
+/* Responsividade base */
 @media (max-width: 600px) {
   body {
     padding: 10px;
   }
-
-  h1 {
-    font-size: 1.6em;
-  }
-
-  input[type="email"],
-  input[type="password"],
-  button {
-    font-size: 16px;
-    padding: 14px;
-    width: 90%; /* Aumenta a largura para 90% em telas menores */
-  }
-}
-
-/* Dashboard (para Batedor e Empresa) */
-.dashboard {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  background-color: #f4f4f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 30px;
-}
-
-/* Mapa Placeholder */
-.map-container {
-  margin-top: 20px;
-  height: 200px;
-  background-color: #ccc;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #666;
-  font-size: 18px;
-  font-weight: bold;
-  user-select: none;
-}
-
-/* Lista dos Pontos de Coleta */
-.pontos-list {
-  margin-top: 20px;
-  max-height: 160px;
-  overflow-y: auto;
-  background-color: white;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.pontos-list ul {
-  padding-left: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.pontos-list li {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-  font-size: 16px;
-}
-
-/* Botões do Dashboard (Ações do Batedor e Empresa) */
-.dashboard-buttons {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-}
-
-.dashboard-buttons button {
-  flex: 1;
-  margin: 0 10px;
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 10px;
-  border: none;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.dashboard-buttons button:hover {
-  opacity: 0.8;
-}
-
-.dashboard-buttons .register-button {
-  background-color: #4caf50;
-}
-
-.dashboard-buttons .history-button {
-  background-color: #2196f3;
-}
-
-.dashboard-buttons .points-button {
-  background-color: #ff9800;
 }

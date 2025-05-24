@@ -9,6 +9,10 @@ import LoginVendedor from './pages/LoginVendedor'; // Tela de Login do Vendedor
 import EmpresaDashboard from "./pages/EmpresaDashboard";
 import BatedorHome from "./pages/BatedorHome";
 import EmpresaHome from "./pages/EmpresaHome";
+import HistoricoDescarte from "./pages/HistoricoDescarte";
+import RegistroDescarte from "./pages/RegistroDescarte.jsx";
+import PontoDetalhes from "./pages/PontoDetalhes";
+
 
 const App = () => {
   return (
@@ -21,6 +25,9 @@ const App = () => {
         <Route path="/cadastro-empresa" element={<EmpresaForm />} />
         <Route path="/batedor/home" element={<BatedorHome />} />
         <Route path="/empresa/home" element={<EmpresaHome />} />
+        <Route path="/batedor/ponto/:id" element={<PontoDetalhes />} />
+        <Route path="/batedor/historico" element={<HistoricoDescarte />} />
+         <Route path="/batedor/registro-descarte" element={<RegistroDescarte />} />
         <Route path="/dashboard" element={<EmpresaDashboard />} />{" "}
         {/* Rota do Dashboard da Empresa */}
       </Routes>

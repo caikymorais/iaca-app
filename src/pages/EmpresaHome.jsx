@@ -1,4 +1,6 @@
 import React from "react";
+import { FaUserCircle } from "react-icons/fa";
+import "./EmpresaHome.css";
 
 const EmpresaHome = () => {
   const pontosColeta = [
@@ -6,142 +8,48 @@ const EmpresaHome = () => {
     { id: 2, nome: "Ponto 2", endereco: "Av. B, 456" },
   ];
 
+  const usuario = {
+    nome: "Empresa XYZ",
+    contato: "(91) 99999-9999",
+  };
+
   return (
-    <div
-      style={{
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        fontFamily: "Arial, sans-serif",
-        backgroundColor: "#f4f4f9",
-        position: "relative",
-        padding: "10px",
-      }}
-    >
-      {/* Perfil da Empresa */}
-      <div
-        style={{
-          position: "absolute",
-          top: 20,
-          right: 20,
-          backgroundColor: "white",
-          padding: "10px 15px",
-          borderRadius: 12,
-          boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-          zIndex: 10,
-          width: 180,
-          textAlign: "center",
-          fontWeight: "bold",
-        }}
-      >
-        <p>Olá, Empresa XYZ</p>
+    <div className="empresa-container">
+      {/* Perfil da empresa */}
+      <div className="user-info">
+        <FaUserCircle size={50} color="#5f1a37" style={{ marginBottom: 8 }} />
+        <p className="user-name">{usuario.nome}</p>
+        <p className="user-contato">{usuario.contato}</p>
       </div>
 
-      {/* Título */}
-      <h1
-        style={{
-          textAlign: "center",
-          fontSize: "1.8em",
-          color: "#5f1a37",
-          marginTop: "50px",
-        }}
-      >
-        Dashboard da Empresa
-      </h1>
+      {/* Mapa placeholder */}
+      <div className="map-container">Mapa dos Pontos de Coleta</div>
 
-      {/* Mapa - Placeholder */}
-      <div
-        style={{
-          flex: 1,
-          backgroundColor: "#e1e1e1",
-          marginTop: "20px",
-          borderRadius: 16,
-          boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          fontSize: "18px",
-          fontWeight: "bold",
-          userSelect: "none",
-        }}
-      >
-        Mapa dos Pontos de Coleta
-      </div>
-
-      {/* Lista dos Pontos de Coleta */}
-      <div
-        style={{
-          maxHeight: 160,
-          overflowY: "auto",
-          marginTop: "20px",
-          backgroundColor: "white",
-          borderRadius: 12,
-          padding: 15,
-          boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-        }}
-      >
-        <h3 style={{ marginTop: 0 }}>Pontos de Coleta Ativos</h3>
-        <ul style={{ paddingLeft: 0, margin: 0, listStyle: "none" }}>
+      {/* Lista de pontos */}
+      <div className="pontos-list">
+        <h3>Pontos de Coleta Ativos</h3>
+        <ul>
           {pontosColeta.map((ponto) => (
-            <li
-              key={ponto.id}
-              style={{
-                padding: "10px 0",
-                borderBottom: "1px solid #ddd",
-                fontSize: 16,
-              }}
-            >
+            <li key={ponto.id}>
               <strong>{ponto.nome}</strong> — {ponto.endereco}
             </li>
           ))}
         </ul>
       </div>
 
-      {/* Botões de Ação */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          padding: "10px 0",
-          backgroundColor: "white",
-          boxShadow: "0 -2px 10px rgba(0,0,0,0.05)",
-        }}
-      >
+      {/* Rodapé com botões */}
+      <div className="footer-buttons">
         <button
-          style={{
-            flex: 1,
-            margin: "0 10px",
-            padding: "12px",
-            fontSize: "16px",
-            borderRadius: "8px",
-            border: "none",
-            backgroundColor: "#4caf50",
-            color: "white",
-            fontWeight: "bold",
-            cursor: "pointer",
-            transition: "background-color 0.3s",
-          }}
-          onClick={() => alert("Agendar Coleta - funcionalidade em breve")}
+          onClick={() => alert("Solicitar Retirada - funcionalidade em breve")}
+          onTouchStart={(e) => (e.target.style.backgroundColor = "#4e1f5c")}
+          onTouchEnd={(e) => (e.target.style.backgroundColor = "#5f1a37")}
         >
-          Agendar Coleta
+          Solicitar Retirada
         </button>
-
         <button
-          style={{
-            flex: 1,
-            margin: "0 10px",
-            padding: "12px",
-            fontSize: "16px",
-            borderRadius: "8px",
-            border: "none",
-            backgroundColor: "#2196f3",
-            color: "white",
-            fontWeight: "bold",
-            cursor: "pointer",
-            transition: "background-color 0.3s",
-          }}
-          onClick={() => alert("Visualizar Relatórios - funcionalidade em breve")}
+          onClick={() => alert("Relatórios - funcionalidade em breve")}
+          onTouchStart={(e) => (e.target.style.backgroundColor = "#4e1f5c")}
+          onTouchEnd={(e) => (e.target.style.backgroundColor = "#5f1a37")}
         >
           Relatórios
         </button>

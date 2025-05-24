@@ -1,86 +1,143 @@
-// src/pages/EmpresaForm.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/logo-iaca.svg";
+import "./Register.css";
 
 const EmpresaForm = () => {
-  // Estados para armazenar os dados do formulário
-  const [nome, setNome] = useState("");
+  const [nomeEmpresa, setNomeEmpresa] = useState("");
   const [cnpj, setCnpj] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const [confirmarSenha, setConfirmarSenha] = useState(""); // Para confirmação de senha
-  const [error, setError] = useState(""); // Para erros de validação
-  const navigate = useNavigate(); // Navegação para outra página após o cadastro
+  const [telefone, setTelefone] = useState("");
+  const [whatsapp, setWhatsapp] = useState(false);
+  const [endereco, setEndereco] = useState("");
+  const [receberInfo, setReceberInfo] = useState(false);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setError("");
 
-    // Validando se a senha e a confirmação de senha são iguais
-    if (senha !== confirmarSenha) {
-      setError("As senhas não coincidem.");
+    if (
+      !nomeEmpresa.trim() ||
+      !cnpj.trim() ||
+      !email.trim() ||
+      !senha.trim() ||
+      !telefone.trim() ||
+      !endereco.trim()
+    ) {
+      setError("Por favor, preencha todos os campos obrigatórios.");
       return;
     }
 
-    // Aqui você pode conectar com a API de cadastro para salvar os dados da empresa
-    console.log("Cadastro da Empresa:", nome, cnpj, email, senha);
+    const dadosCadastro = {
+      nomeEmpresa,
+      cnpj,
+      email,
+      senha,
+      telefone,
+      whatsapp,
+      endereco,
+      receberInfo,
+    };
 
-    // Após o cadastro, redirecionar para a página de pontos de coleta ou outra página
-    navigate("/dashboard"); // Alteração para redirecionar após o cadastro
+    console.log("Dados do cadastro da empresa:", dadosCadastro);
+    alert(`Cadastro da empresa ${nomeEmpresa} realizado com sucesso!`);
+    navigate("/login-empresa");
   };
 
   return (
-    <div className="form-container">
+    <div className="register-container">
+      <div className="logo-container">
+        <img src={logo} alt="Logo do iaca-app" className="logo" />
+      </div>
+
       <h2>Cadastro - Empresa Reutilizadora</h2>
+
       <form onSubmit={handleSubmit}>
-        {/* Campo para o nome da empresa */}
+        <label htmlFor="nomeEmpresa">Nome da Empresa</label>
         <input
+          id="nomeEmpresa"
           type="text"
-          placeholder="Nome da Empresa"
-          value={nome}
-          onChange={(e) => setNome(e.target.value)}
+          placeholder="Ex: Açai do Pará Ltda."
+          value={nomeEmpresa}
+          onChange={(e) => setNomeEmpresa(e.target.value)}
           required
         />
 
-        {/* Campo para o CNPJ */}
+        <label htmlFor="cnpj">CNPJ</label>
         <input
+          id="cnpj"
           type="text"
-          placeholder="CNPJ"
+          placeholder="00.000.000/0000-00"
           value={cnpj}
           onChange={(e) => setCnpj(e.target.value)}
           required
         />
 
-        {/* Campo para o e-mail */}
+        <label htmlFor="email">E-mail</label>
         <input
+          id="email"
           type="email"
-          placeholder="E-mail"
+          placeholder="exemplo@empresa.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
 
-        {/* Campo para a senha */}
+        <label htmlFor="senha">Senha</label>
         <input
+          id="senha"
           type="password"
-          placeholder="Senha"
+          placeholder="Digite uma senha segura"
           value={senha}
           onChange={(e) => setSenha(e.target.value)}
           required
         />
 
-        {/* Campo para confirmar a senha */}
+        <div className="telefone-group">
+          <label htmlFor="telefone">Número de telefone</label>
+          <input
+            id="telefone"
+            type="text"
+            placeholder="Ex: (91) 99999-9999"
+            value={telefone}
+            onChange={(e) => setTelefone(e.target.value)}
+            required
+          />
+        </div>
+
+        <label className="checkbox-label">
+          <input
+            type="checkbox"
+            checked={whatsapp}
+            onChange={(e) => setWhatsapp(e.target.checked)}
+          />
+          Este número é WhatsApp
+        </label>
+
+        <label htmlFor="endereco">Endereço Completo</label>
         <input
-          type="password"
-          placeholder="Confirmar Senha"
-          value={confirmarSenha}
-          onChange={(e) => setConfirmarSenha(e.target.value)}
+          id="endereco"
+          type="text"
+          placeholder="Rua das Flores, 123, Bairro Centro"
+          value={endereco}
+          onChange={(e) => setEndereco(e.target.value)}
           required
         />
 
-        {/* Exibir erro se as senhas não coincidirem */}
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        <label className="checkbox-label">
+          <input
+            type="checkbox"
+            checked={receberInfo}
+            onChange={(e) => setReceberInfo(e.target.checked)}
+          />
+          Desejo receber informações e novidades
+        </label>
 
-        {/* Botão de submit */}
+        {error && <p className="error-message">{error}</p>}
+
         <button type="submit">Cadastrar</button>
       </form>
     </div>

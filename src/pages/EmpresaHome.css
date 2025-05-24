@@ -1,0 +1,161 @@
+.empresa-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  font-family: Arial, sans-serif;
+  color: #000;
+  background-color: #fcba04;
+  overflow: hidden;
+}
+
+/* Perfil da empresa */
+.user-info {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: white;
+  padding: 12px 18px;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  text-align: center;
+  z-index: 10;
+  max-width: 180px;
+  user-select: none;
+  font-weight: 700;
+  color: #5f1a37;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-info .user-name {
+  margin: 4px 0 0 0;
+  font-size: 18px;
+}
+
+.user-info .user-contato {
+  margin: 2px 0 0 0;
+  font-weight: 600;
+  color: #7a3a6b;
+  font-size: 14px;
+}
+
+/* Mapa ocupa a maior parte da tela */
+.map-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 140px; /* Deixa espaço para lista + rodapé */
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #666;
+  user-select: none;
+  z-index: 1;
+  border-radius: 0;
+}
+
+/* Lista de pontos de coleta */
+.pontos-list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 60px; /* acima do rodapé */
+  background-color: white;
+  max-height: 80px;
+  overflow-y: auto;
+  border-radius: 12px 12px 0 0;
+  padding: 10px 20px;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+  font-size: 16px;
+  color: #5f1a37;
+}
+
+.pontos-list h3 {
+  margin: 0 0 5px 0;
+}
+
+.pontos-list ul {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.pontos-list li {
+  border-bottom: 1px solid #ddd;
+  padding: 2px 0;
+  font-weight: 600;
+}
+
+/* Rodapé com botões roxos */
+.footer-buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fcba04; /* amarelo */
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 10px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+  z-index: 15;
+}
+
+.footer-buttons button {
+  flex: 1;
+  margin: 0 10px;
+  padding: 14px 0;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  background-color: #5f1a37; /* roxo tema */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.footer-buttons button:hover,
+.footer-buttons button:active {
+  background-color: #4e1f5c;
+}
+
+.footer-buttons button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 600px) {
+  .user-info {
+    max-width: 140px;
+    padding: 10px 14px;
+  }
+
+  .user-info .user-name {
+    font-size: 16px;
+  }
+
+  .user-info .user-contato {
+    font-size: 12px;
+  }
+
+  .footer-buttons button {
+    font-size: 14px;
+    padding: 12px 0;
+  }
+
+  .map-container {
+    font-size: 18px;
+  }
+
+  .pontos-list {
+    max-height: 70px;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}

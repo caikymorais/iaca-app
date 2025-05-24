@@ -1,7 +1,7 @@
-// src/pages/LoginEmpresa.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo-iaca.svg";
+import "./Login.css";
 
 const LoginEmpresa = () => {
   const [email, setEmail] = useState("");
@@ -13,23 +13,19 @@ const LoginEmpresa = () => {
     e.preventDefault();
     setError("");
 
-    // Simulação de validação de login para a empresa
     if (email === "empresa@teste.com" && senha === "senha123") {
-      // Login bem-sucedido, redirecionando para o dashboard
       alert("Login da Empresa bem-sucedido!");
-      navigate("/Empresa/Home"); // Redireciona para o Dashboard da Empresa
+      navigate("/Empresa/Home");
     } else {
-      // Se as credenciais estiverem erradas
       setError("E-mail ou senha inválidos!");
     }
   };
 
   return (
-    
-    <div className="form-container">
+    <div className="login-container">
       <div className="logo-container">
-         <img src={logo} alt="Logo do iaca-app" className="logo" />
-       </div>
+        <img src={logo} alt="Logo do iaca-app" className="logo" />
+      </div>
       <h2>Login - Empresa Reutilizadora</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -46,14 +42,14 @@ const LoginEmpresa = () => {
           onChange={(e) => setSenha(e.target.value)}
           required
         />
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p className="error-message">{error}</p>}
         <button type="submit">Entrar</button>
       </form>
-
-      {/* Botão de cadastro */}
       <div>
         <p>Não tem conta?</p>
-        <button onClick={() => navigate("/cadastro-empresa")}>Cadastre-se</button>
+        <button className="secondary-button" onClick={() => navigate("/cadastro-empresa")}>
+          Cadastre-se
+        </button>
       </div>
     </div>
   );

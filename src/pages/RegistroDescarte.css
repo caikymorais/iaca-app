@@ -1,0 +1,87 @@
+.registro-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  background: #fcba04;
+  border-radius: 12px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #5f1a37;
+}
+
+.registro-container h2 {
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.pontos-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.pontos-lista li {
+  margin-bottom: 10px;
+}
+
+.pontos-lista button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background-color: #5f1a37;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pontos-lista button:hover {
+  background-color: #4e1f5c;
+}
+
+.selecionado-info p {
+  font-weight: 700;
+}
+
+.selecionado-info button {
+  padding: 12px 20px;
+  margin: 10px 10px 0 0;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  background-color: #5f1a37;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.selecionado-info button:hover {
+  background-color: #4e1f5c;
+}
+
+.cancel-btn {
+  background-color: #cc0000;
+}
+
+.cancel-btn:hover {
+  background-color: #aa0000;
+}
+
+.erro {
+  color: #cc0000;
+  font-weight: 700;
+}
+
+.sucesso {
+  color: #2d862d;
+  font-weight: 700;
+}
+
+.foto-preview {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 10px;
+}
