@@ -1,0 +1,51 @@
+/* src/index.css */
+
+/* Reset e estilo base */
+:root {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #fcba04;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fcba04;
+  font-family: Arial, sans-serif;
+  color: #000;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  color: #5f1a37;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  display: block;
+}
+
+/* Responsividade base */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+}
